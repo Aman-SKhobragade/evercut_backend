@@ -14,6 +14,9 @@ import barberBusinessRoutes from "./routes/barber/business/barberBusiness.routes
 import barberEmployeeRoutes from "./routes/barber/business/barberEmployee.routes.js";
 import barberServiceRoutes from "./routes/barber/business/barberService.routes.js";
 
+// Rating routes
+import ratingRoutes from "./routes/rating/rating.routes.js";
+
 dotenv.config();
 
 const app = express();
@@ -34,6 +37,9 @@ app.use("/api/barber/profile", barberProfileRoutes);
 app.use("/api/barber/business", barberBusinessRoutes);
 app.use("/api/barber/employees", barberEmployeeRoutes);
 app.use("/api/barber/services", barberServiceRoutes);
+
+// Rating API routes
+app.use("/api/ratings", ratingRoutes);
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
